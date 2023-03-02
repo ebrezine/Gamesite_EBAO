@@ -1,0 +1,39 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<div class="main">
+  <h1>Rock, paper, scissors!</h1>
+  <h2>Round: {{games}}</h2>
+  <!-- counter -->
+  <div class="middle">
+    <!-- Player box -->
+    <div class="player box">
+      <h4>Player 1</h4>
+      <div class="options">
+        <button class="option rock" (click)="game(0)"><img src="https://www.shutterstock.com/image-vector/hand-fist-kid-cartoon-image-260nw-650539312.jpg" alt="">
+        </button>
+        <button class="option paper" (click)="game(1)"><img src="https://www.seekpng.com/png/detail/93-939782_hand-silhouette-raised-hand-cartoon.png" alt="">
+        </button>
+        <button class="option scissors" (click)="game(2)"><img src="https://png.pngitem.com/pimgs/s/226-2260597_scissors-icon-hand-scissors-png-transparent-png.png" alt="">
+        </button>
+        <!-- win counter -->
+      </div>
+      <h6>Your choice: {{pChoice}}</h6>
+      <h6>{{pWins}}</h6>
+    </div>
+    <h4>{{win}}</h4>
+    <!-- Game checker function determines message -->
+    <div class="box">
+      <h4>Computer</h4>
+      <img *ngIf="games>0" src={{cDisplay}} alt="">
+      <h6 *ngIf="games===0">{{cDisplay}}</h6>
+      <!-- random image -->
+
+      <h6>Computer choice: {{cChoice}}</h6>
+      <h6>{{cWins}}</h6>
+    </div>
+    <!-- win counter -->
+  </div>
+  <button class="reset" (click)="reset()">Reset</button>
+  <!-- resets counter -->
+</div>
